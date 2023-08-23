@@ -5,19 +5,9 @@ class DiffusionMaps:
         self.epsilon = epsilon
         self.alpha = alpha
         self.dimension = dimension
-
-#    def calculate_distance_matrix(self, X):
-#        return np.linalg.norm(X[:, np.newaxis] - X, axis=2)
+        
     def calculate_distance_matrix(self, X):
-        N = X.shape[0]
-        D = np.zeros((N, N))
-        for i in range(N):
-            for j in range(i+1, N):
-                diff = X[i, :] - X[j, :]
-                distance = np.sqrt(np.dot(diff, diff))
-                D[i, j] = distance
-                D[j, i] = distance
-        return D
+        return np.linalg.norm(X[:, np.newaxis] - X, axis=2)
 
     def fit_transform(self, X):
         try:

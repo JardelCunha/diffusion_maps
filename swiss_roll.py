@@ -27,6 +27,7 @@ ax2 = fig.add_subplot(122)
 #descartando a primeira diemsão, pois não é relevante para visualização
 ax2.scatter(Ut[:, 1], Ut[:, 2], c=color, cmap=plt.cm.Spectral)
 ax2.set_title('Dados Transformados')
+ax2.set_xlabel(f'Epsilon = {epsilon}    Alpha = {alpha}')
 
 plt.tight_layout()
 plt.show()
